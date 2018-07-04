@@ -1,0 +1,7 @@
+<section class='container option-container' aria-label="options" aria-live="polite">
+  <ul>
+    <li class="options" *ngFor="let option of options" (click)="onOptionClick(option,$event)">
+      <span tabindex="0" (keydown.space)="accessibleSelect($event)" #optionElms >{{option}}</span>
+    </li>
+  </ul>
+</section>

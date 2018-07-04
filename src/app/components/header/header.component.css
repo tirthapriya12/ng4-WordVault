@@ -1,0 +1,45 @@
+
+.help{
+    border: none;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-image: url(/assets/images/help-ic.png);
+    background-size: cover;
+    background-color: transparent;
+    margin-right: 3px;
+    cursor: pointer;
+}
+.help:hover{
+    background-image: url('/assets/images/help-ic-hover.png');
+}
+
+.close{
+    border: none;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-image: url('/assets/images/close-ic.png');
+    background-size: cover;
+    background-color: transparent;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.close:hover{
+    background-image: url('/assets/images/close-ic-hover.png');
+}
+.help-container{
+    position: absolute;
+    right: 5px;
+    margin-top: 15px;
+}
+.title{
+    display: inline-block;
+    margin: 12px;
+}
+
+header{
+    background-color: #005b8a;
+    color: white;
+}

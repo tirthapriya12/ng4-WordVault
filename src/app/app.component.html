@@ -1,0 +1,6 @@
+<app-header [templateData]="templateData"></app-header>
+<main>
+    <app-assignment (pageChanged)="onPageChanged($event)" [templateData]="templateData"></app-assignment>
+</main>
+<app-footer [currentPageNum]="currentPage"  [totalPages]="totalPages"></app-footer>
+

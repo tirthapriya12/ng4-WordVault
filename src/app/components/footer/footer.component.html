@@ -1,0 +1,9 @@
+<footer>
+
+  <nav class="navigation">
+    {{rounds}}
+    <ul>
+      <li *ngFor="let round of rounds" class="nav-icon" [ngClass]="{'active': round == currentPageNum}"></li>
+    </ul>
+  </nav>
+</footer>

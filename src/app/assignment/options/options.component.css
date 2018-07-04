@@ -1,0 +1,48 @@
+.option-container{
+    display: inline-block;
+    width: 45%;
+    margin-left: 4%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.options{
+    margin-bottom: 12px;
+}
+
+.options span{
+    vertical-align: sub;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding-bottom: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: middle;
+    height: 35px;
+    border: 2px solid rgb(105, 101, 101);
+    border-top-right-radius: 110px;
+    border-bottom-right-radius: 110px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.active{
+    background-color: yellowgreen !important;
+}
+
+.highlight-correct{
+
+    border: 2px solid #048804 !important;
+    color: #048804;
+}
+
+.highlight-incorrect{
+
+    border: 2px solid #9e0606 !important;
+    color: #9e0606;
+}

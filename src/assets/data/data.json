@@ -1,0 +1,175 @@
+{
+	"word_vault": {
+		"title": "Your Turn: Vocabulary",
+		"directions": "\nRead each sentence. Choose the vocabulary word that best completes the sentence.\n",
+		"directionsAudio": "dl_vocabulary_completes_sentence_2.mp3",
+		"sfxPool": {
+			"_value": "pool1"
+		},
+		"vaultImage": "photo_ring.jpg",
+		"rounds": {
+			"round1": {
+				"questions": {
+					"question": [
+						{
+							"text": {
+								"p": "The little lost sheep are in ______!"
+							},
+							"answers": {
+								"text": [
+									"partner",
+									"special",
+									"danger",
+									"splendid"
+								]
+							},
+							"correctAnswer": "3",
+							"frameRange": {
+								"start": 1,
+								"end": 46
+							}
+						},
+						{
+							"text": {
+								"p": "Meg is my ______ in math."
+							},
+							"answers": {
+								"text": [
+									"danger",
+									"partner",
+									"splendid",
+									"special"
+								]
+							},
+							"correctAnswer": "2",
+							"frameRange": {
+								"start": 47,
+								"end": 138
+							}
+						}
+					]
+				}
+			},
+			"round2": {
+				"questions": {
+					"question": [
+						{
+							"text": {
+								"p": "The queen lives in a ______ castle."
+							},
+							"answers": {
+								"text": [
+									"partner",
+									"splendid",
+									"danger",
+									"special"
+								]
+							},
+							"correctAnswer": "2",
+							"frameRange": {
+								"start": 139,
+								"end": 184
+							}
+						},
+						{
+							"text": {
+								"p": "My _______ and I will work together as a team."
+							},
+							"answers": {
+								"text": [
+									"special",
+									"danger",
+									"partner",
+									"splendid"
+								]
+							},
+							"correctAnswer": "3",
+							"frameRange": {
+								"start": 185,
+								"end": 230
+							}
+						},
+						{
+							"text": {
+								"p": "This hat is _____ because Gran gave it to me."
+							},
+							"answers": {
+								"text": [
+									"danger",
+									"partner",
+									"special",
+									"splendid"
+								]
+							},
+							"correctAnswer": "3",
+							"frameRange": {
+								"start": 231,
+								"end": 276
+							}
+						}
+					]
+				}
+			},
+			"round3": {
+				"questions": {
+					"question": [
+						{
+							"text": {
+								"p": "Small fish may face ______ in the big sea."
+							},
+							"answers": {
+								"text": [
+									"splendid",
+									"special",
+									"danger",
+									"partner"
+								]
+							},
+							"correctAnswer": "3",
+							"frameRange": {
+								"start": 277,
+								"end": 322
+							}
+						},
+						{
+							"text": {
+								"p": "I thanked my host for a _____ meal."
+							},
+							"answers": {
+								"text": [
+									"splendid",
+									"danger",
+									"special",
+									"partner"
+								]
+							},
+							"correctAnswer": "1",
+							"frameRange": {
+								"start": 278,
+								"end": 368
+							}
+						},
+						{
+							"text": {
+								"p": "He will get ______ glasses to help him see."
+							},
+							"answers": {
+								"text": [
+									"danger",
+									"special",
+									"partner",
+									"splendid"
+								]
+							},
+							"correctAnswer": "2",
+							"frameRange": {
+								"start": 369,
+								"end": 456
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}
