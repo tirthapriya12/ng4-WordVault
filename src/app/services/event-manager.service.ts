@@ -40,4 +40,9 @@ export class EventManager {
       .eventsSubject
       .next({name, args});
   }
+
+  off(name){
+    this.listeners[name] = null;
+    return this;
+  }
 }

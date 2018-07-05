@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, Output } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, Output, ViewChild } from '@angular/core';
 import { EventManager } from '../../services/event-manager.service';
 import { ValidatorService } from './validator.service';
 import { EventEmitter } from 'events';
@@ -13,7 +13,7 @@ import { UserResponseService } from '../../services/user-response.service';
 export class ValidatorComponent implements OnInit {
 
   @Input() roundData: any;
-
+  @ViewChild('OKBtn') OKBtn: any;
   currentResponse: string;
   currentAttemptIndex: number;
   attempt: string = 'first';
@@ -33,8 +33,8 @@ export class ValidatorComponent implements OnInit {
     if (changes.roundData.currentValue) {
       this.roundData = changes.roundData.currentValue;
       this.validatorService.prepareValidators(this.roundData);
-      this.attemptOrder();
       this.currentAttemptIndex = 0;
+      this.attemptOrder();
       this.eventManager.broadcast('loadnextquestion', this.currentAttemptIndex);
       this.eventManager.broadcast('loadnextoption', this.currentAttemptIndex);
       this.disableOkButton = true;
@@ -52,6 +52,11 @@ export class ValidatorComponent implements OnInit {
       userResponse = this.userResponseService.getUserResponse(this.currentAttemptIndex, this.roundData, this.attempt),
       questionanimationPlayed;
 
+    if (questionanimationPlayed) {
+      questionanimationPlayed.unsubscribe();
+      questionanimationPlayed = null;
+    }
+
     if (this.validatorService.getValidator(this.currentAttemptIndex) && userResponse) {
 
       correct = userResponse === this.validatorService.getValidator(this.currentAttemptIndex);
@@ -59,13 +64,14 @@ export class ValidatorComponent implements OnInit {
       //if attempt < no. of questions && correct load next question of the page
       if (this.currentAttemptIndex < this.validatorService.validators.length - 1 && correct) {
 
-        this.eventManager.on('questionanimationplayed', () => {
+        this.eventManager.off('questionanimationplayed').on('questionanimationplayed', () => {
           this.loadNextPageQuestion(); //load next question when animation completes 
+
         });
         this.eventManager.broadcast('playquestionanimation', this.currentAttemptIndex);
       } else if (correct) {
 
-        this.eventManager.on('questionanimationplayed', () => {
+        this.eventManager.off('questionanimationplayed').on('questionanimationplayed', () => {
           this.loadNextPage(); //loadNextPage after animation completes
         });
         this.eventManager.broadcast('playquestionanimation', this.currentAttemptIndex);
@@ -79,7 +85,7 @@ export class ValidatorComponent implements OnInit {
       }
       this.attemptOrder();
     }
-
+    this.OKBtn.nativeElement.disabled = true;
   }
 
   loadNextPageQuestion() {
@@ -105,7 +111,7 @@ export class ValidatorComponent implements OnInit {
   attemptOrder() {
     if (!this.currentAttemptIndex && this.currentAttemptIndex != 0) return;
 
-    if (!this.roundData[this.currentAttemptIndex]['second']) {
+    if (!this.roundData[this.currentAttemptIndex]['first']) {
       this.attempt = 'first';
     } else {
       this.attempt = 'second';
@@ -119,13 +125,19 @@ export class ValidatorComponent implements OnInit {
 
   shouldLoadNextPage() {
 
+    let callBack;
     if (this.currentAttemptIndex < this.validatorService.validators.length - 1) {
 
-      this.loadNextPageQuestion();
+      callBack = this.loadNextPageQuestion;
     } else {
 
-      this.loadNextPage();
+      callBack = this.loadNextPage;
     }
+    
+    this.eventManager.off('questionanimationplayed').on('questionanimationplayed', () => {
+     callBack.call(this);
+    });
+    this.eventManager.broadcast('playquestionanimation', this.currentAttemptIndex);
   }
 
 }
