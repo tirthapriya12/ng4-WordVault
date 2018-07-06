@@ -3,6 +3,7 @@ import { AssignmentService } from './assignment.service';
 import { EventManager } from '../services/event-manager.service';
 import { UserResponseService } from '../services/user-response.service';
 import { SpriteAnimationDataService } from '../services/sprite-animation-data.service';
+import { SoundService } from '../services/sound.service';
 
 @Component({
   selector: 'app-assignment',
@@ -23,7 +24,7 @@ export class AssignmentComponent implements OnInit {
 
   @Output() pageChanged: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private assignmentService: AssignmentService, private eventManager: EventManager, private userResponseService: UserResponseService, private spriteAnimationDatServc: SpriteAnimationDataService) { }
+  constructor(private assignmentService: AssignmentService, private eventManager: EventManager, private userResponseService: UserResponseService, private spriteAnimationDatServc: SpriteAnimationDataService, private soundService: SoundService) { }
 
   ngOnInit() {
 
@@ -41,6 +42,7 @@ export class AssignmentComponent implements OnInit {
         this.onLoadNextPage(data)
       }
     });
+
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -55,8 +57,7 @@ export class AssignmentComponent implements OnInit {
 
   init() {
     this.pageIndex = 0;
-
-
+    
   }
 
   setDirection(): void {

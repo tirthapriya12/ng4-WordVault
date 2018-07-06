@@ -12,9 +12,10 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { QuestionComponent } from './assignment/question/question.component';
 import { OptionsComponent } from './assignment/options/options.component';
 import { ValidatorComponent } from './assignment/validator/validator.component';
-import {UserResponseService} from './services/user-response.service';
+import { UserResponseService } from './services/user-response.service';
 import { SpriteAnimationComponent } from './components/sprite-animation/sprite-animation.component';
-import {SpriteAnimationDataService} from './services/sprite-animation-data.service';
+import { SpriteAnimationDataService } from './services/sprite-animation-data.service';
+import { SoundService } from './services/sound.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {SpriteAnimationDataService} from './services/sprite-animation-data.servi
     BrowserModule,
     HttpClientModule
   ],
-  providers: [TemplateDataService, EventManager, UserResponseService, SpriteAnimationDataService],
+  providers: [TemplateDataService, EventManager, UserResponseService, SpriteAnimationDataService, SoundService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
