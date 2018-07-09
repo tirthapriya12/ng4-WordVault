@@ -50,13 +50,7 @@ export class ValidatorComponent implements OnInit {
   validateUserResponse() {
     let correct = false,
       userResponse = this.userResponseService.getUserResponse(this.currentAttemptIndex, this.roundData, this.attempt),
-      questionanimationPlayed;
-
-    if (questionanimationPlayed) {
-      questionanimationPlayed.unsubscribe();
-      questionanimationPlayed = null;
-    }
-
+      isSecondAttempt = this.attempt === 'second';
     if (this.validatorService.getValidator(this.currentAttemptIndex) && userResponse) {
 
       correct = userResponse === this.validatorService.getValidator(this.currentAttemptIndex);
@@ -64,23 +58,27 @@ export class ValidatorComponent implements OnInit {
       //if attempt < no. of questions && correct load next question of the page
       if (this.currentAttemptIndex < this.validatorService.validators.length - 1 && correct) {
 
+        this.eventManager.broadcast('playcorrectattemptaudio', isSecondAttempt);
         this.eventManager.off('questionanimationplayed').on('questionanimationplayed', () => {
           this.loadNextPageQuestion(); //load next question when animation completes 
 
         });
         this.eventManager.broadcast('playquestionanimation', this.currentAttemptIndex);
-      } else if (correct) {
 
+      } else if (correct) {
+        this.eventManager.broadcast('playcorrectattemptaudio', isSecondAttempt);
         this.eventManager.off('questionanimationplayed').on('questionanimationplayed', () => {
           this.loadNextPage(); //loadNextPage after animation completes
         });
         this.eventManager.broadcast('playquestionanimation', this.currentAttemptIndex);
       } else {
+        this.eventManager.broadcast('playincorrectattemptaudio', isSecondAttempt);
         this.resetAttempt();
       }
 
       //if incorrect and second attempt , show the correct answer to the user
-      if (this.attempt === 'second' && !correct) {
+      if (isSecondAttempt && !correct) {
+        this.eventManager.broadcast('playincorrectattemptaudio', isSecondAttempt);
         this.eventManager.broadcast('highlightcorrect', this.validatorService.getValidator(this.currentAttemptIndex));
       }
       this.attemptOrder();
@@ -133,9 +131,9 @@ export class ValidatorComponent implements OnInit {
 
       callBack = this.loadNextPage;
     }
-    
+
     this.eventManager.off('questionanimationplayed').on('questionanimationplayed', () => {
-     callBack.call(this);
+      callBack.call(this);
     });
     this.eventManager.broadcast('playquestionanimation', this.currentAttemptIndex);
   }

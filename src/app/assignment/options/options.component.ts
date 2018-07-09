@@ -15,7 +15,7 @@ export class OptionsComponent implements OnInit {
   @ViewChildren('optionElms') optionElms: HTMLElement;
 
   options: Array<any> = [];
-  readonly highlightTime: number = 1200;
+  readonly highlightTime: number = 1800;
   currentAttempt: EventTarget;
 
   constructor(private eventManager: EventManager, private optionService: OptionsService, private changeDetector: ChangeDetectorRef, private renderer: Renderer) { }

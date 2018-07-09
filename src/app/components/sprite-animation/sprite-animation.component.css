@@ -6,3 +6,11 @@
     background: url(/assets/images/vault-sprite.png) no-repeat -1px 0;
 
 }
+
+.reward{
+    
+    position: absolute;
+    top: 80px;
+    height: 248px;
+    left: 163px;
+}
