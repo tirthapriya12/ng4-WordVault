@@ -1,4 +1,4 @@
-<app-header [templateData]="templateData"></app-header>
+<app-header aria-live="assertive" [templateData]="templateData" [helpData]="helpData"></app-header>
 <main>
     <app-assignment (pageChanged)="onPageChanged($event)" [totalPages]="totalPages" [templateData]="templateData"></app-assignment>
 </main>

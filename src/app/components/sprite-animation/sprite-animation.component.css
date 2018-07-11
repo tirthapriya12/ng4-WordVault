@@ -14,3 +14,12 @@
     height: 248px;
     left: 163px;
 }
+
+
+@media screen and (max-width: 425px){
+    .sprite{
+
+        transform: scale(0.75);
+        left: -43px;
+    }
+}

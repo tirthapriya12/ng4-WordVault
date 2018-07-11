@@ -7,6 +7,7 @@ import { EventManager } from './event-manager.service';
 export class TemplateDataService {
 
   templateData: any;
+  helpData: any;
   constructor(private http: HttpClient, private eventManager: EventManager) { }
 
   getData() {
@@ -22,16 +23,24 @@ export class TemplateDataService {
 
     return this.http.get('./assets/data/data.json').map((data) => {
       this.templateData = data;
-      this.eventManager.broadcast('templateData',this.templateData);
+      this.eventManager.broadcast('templateData', this.templateData);
       return data;
     });
   }
 
-  getTotalRounds(){
-    let count=0;
-    for(let round in this.templateData['word_vault'].rounds){
-      count++;
-    }
-    return count;
+  getTotalRounds() {
+
+    return Object.keys(this.templateData['word_vault'].rounds).length;
+  }
+
+  fetchHelpData() {
+    return this.http.get('./assets/data/word_vault_help.json').map((data) => {
+
+      return this.helpData = data;
+    });
+  }
+
+  getHelpData(){
+    return this.helpData;
   }
 }

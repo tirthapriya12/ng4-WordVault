@@ -22,3 +22,11 @@
     background-color: #7d9dba;
     cursor: auto;
 }
+
+@media screen and (max-width: 768px){
+    .validator-container{
+
+        position: absolute;
+        right: 45px;
+    }
+}

@@ -1,6 +1,6 @@
 <section class="dev-size">
     <div class="directions">
-        <button aria-label="direction audio" class="direction-audio" *ngIf="!!directionAudioUrl">
+        <button aria-label="direction audio" (click)="playDirectionAudio()" class="direction-audio" *ngIf="!!directionAudioUrl">
             <strong class="fa fa-volume-up"></strong>
         </button>
         <h3 class="direction-text">{{direction}}</h3>

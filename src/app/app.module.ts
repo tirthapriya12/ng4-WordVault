@@ -16,6 +16,7 @@ import { UserResponseService } from './services/user-response.service';
 import { SpriteAnimationComponent } from './components/sprite-animation/sprite-animation.component';
 import { SpriteAnimationDataService } from './services/sprite-animation-data.service';
 import { SoundService } from './services/sound.service';
+import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SoundService } from './services/sound.service';
     QuestionComponent,
     OptionsComponent,
     ValidatorComponent,
-    SpriteAnimationComponent
+    SpriteAnimationComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

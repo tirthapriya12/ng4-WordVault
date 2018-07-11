@@ -32,3 +32,30 @@
     display: inline-block;
     float: left;
 }
+
+@media screen and (max-width: 768px){
+    .dev-size{
+        height: 1000px;
+    }
+    .container{
+        padding: 0 3%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    
+    .dev-size{
+        height: 1020px;
+    }
+
+    .direction-audio{
+        position: relative;
+        top: -10px;
+    }
+
+    .direction-text{
+        word-wrap: break-word;
+        width: 90%;
+    }
+      
+}

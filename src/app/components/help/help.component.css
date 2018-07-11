@@ -1,0 +1,49 @@
+.modal-container{
+    width: 60%;
+    position: relative;
+    border: 3px solid blue;
+    height: 472px;
+    background: white;
+    top: 40px;
+    margin: 0 auto;
+}
+
+.help-text{
+    display: inline-block;
+    float: left;
+    width: 251px;
+    overflow: auto;
+    height: 447px;
+    margin-top: 11px;
+    margin-left: 10px;
+}
+
+
+.help-video{
+
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+::ng-deep span b{
+    color: red;
+}
+.close-btn{
+    position: absolute;
+    right: -9px;
+    top: -23px;
+    border-radius: 50%;
+    border: none;
+    height: 20px;
+    width: 26px;
+    background: #58aee2;
+    color: white;
+    cursor: pointer;
+}
+
+.close-btn:focus{
+    outline-color: black;    
+}

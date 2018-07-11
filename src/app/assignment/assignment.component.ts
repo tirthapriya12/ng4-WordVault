@@ -127,4 +127,8 @@ export class AssignmentComponent implements OnInit {
 
     return this.pageIndex === this.totalPages -1 && qId === this.currentRoundData.length -1;
   }
+
+  playDirectionAudio(){
+    this.soundService.play('assets/sfx/'+this.directionAudioUrl);
+  }
 }

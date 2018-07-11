@@ -8,8 +8,9 @@ import { Component, OnInit, Input, SimpleChange, SimpleChanges } from '@angular/
 export class HeaderComponent implements OnInit {
 
   @Input() templateData: any;
+  @Input() helpData: any;
   title: string;
-  
+  helpOpened: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -18,9 +19,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.templateData.currentValue) {
-    this.templateData = changes.templateData.currentValue;
+    if (changes.templateData && changes.templateData.currentValue) {
+      this.templateData = changes.templateData.currentValue;
       this.setTemplateData();
+    }
+    if (changes.helpData && changes.helpData.currentValue) {
+      this.helpData = changes.helpData.currentValue;
     }
   }
 
@@ -28,6 +32,10 @@ export class HeaderComponent implements OnInit {
     this.title = this.templateData.title;
   }
 
+  toggleHelp() {
+
+    this.helpOpened = !this.helpOpened;
+  }
 
 
 }

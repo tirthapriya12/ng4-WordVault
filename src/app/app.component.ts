@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
 
   title = 'Word-Vault';
   templateData: any;
+  helpData: any;
   currentPage: number = 0;
   totalPages: number = 0;
 
@@ -19,6 +20,10 @@ export class AppComponent implements OnInit {
       console.log(data);
       this.templateData = data['word_vault'];
       this.totalPages = this.templateDataService.getTotalRounds();
+    });
+
+    this.templateDataService.fetchHelpData().subscribe((data) => {
+      this.helpData = data;
     });
 
   }

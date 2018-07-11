@@ -43,3 +43,15 @@ header{
     background-color: #005b8a;
     color: white;
 }
+
+.hide{
+    display: none;
+}
+
+app-help{
+    z-index: 1;
+    position: absolute;
+    background: #7f7070;
+    width: 100%;
+    height: 92%;
+}
