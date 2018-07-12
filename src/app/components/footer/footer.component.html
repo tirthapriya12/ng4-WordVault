@@ -1,9 +1,9 @@
 <footer>
 
-  <nav class="navigation">
+  <nav aria-live="polite" class="navigation">
     {{rounds}}
     <ul>
-      <li *ngFor="let round of rounds" class="nav-icon" [ngClass]="{'active': round == currentPageNum}"></li>
+      <li *ngFor="let round of rounds" [attr.aria-label]="(round == currentPageNum)? 'Page '+ (round+1) : '' " class="nav-icon" [ngClass]="{'active': round == currentPageNum}"></li>
     </ul>
   </nav>
 </footer>

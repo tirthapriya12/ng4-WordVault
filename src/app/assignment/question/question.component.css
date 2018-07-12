@@ -1,4 +1,4 @@
-.question-container{
+::ng-deep .question-container{
     border: 4px solid rgb(105, 101, 101);
     margin-left: 24px;
     margin-right: 24px;
@@ -6,4 +6,10 @@
     font-size: 19px;
     font-weight: 600;
     background-color: #fff;
+}
+
+::ng-deep .underline{
+    min-width: 74px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
 }

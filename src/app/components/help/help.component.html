@@ -1,5 +1,5 @@
-<section class="modal-container">
-  <button #close (click)="emitClose()" class="close-btn">X</button>
+<section #modal class="modal-container" (keydown.esc)="emitClose()">
+  <button #close (click)="emitClose()" aria-label="close" class="close-btn">X</button>
   <section (keydown.tab)="handleFocus()" tabindex="0" class="help-text">
     <span [innerHTML]="helpText">
     </span>

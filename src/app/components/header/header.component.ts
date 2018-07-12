@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, SimpleChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() templateData: any;
   @Input() helpData: any;
+  @Output() helpopened = new EventEmitter();
   title: string;
   helpOpened: boolean = false;
   constructor() { }
@@ -35,7 +36,9 @@ export class HeaderComponent implements OnInit {
   toggleHelp() {
 
     this.helpOpened = !this.helpOpened;
+    this.helpopened.emit(this.helpOpened);
   }
+
 
 
 }

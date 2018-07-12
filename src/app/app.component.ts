@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   helpData: any;
   currentPage: number = 0;
   totalPages: number = 0;
+  aria_hidden:boolean = false;
 
   constructor(private templateDataService: TemplateDataService, private changeDetector: ChangeDetectorRef) {
 
@@ -38,6 +39,9 @@ export class AppComponent implements OnInit {
 
   }
 
+  onHelpOpened(data){
+      this.aria_hidden = data;
+  }
 
 }
 

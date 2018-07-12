@@ -1,3 +1,3 @@
-<p aria-live="polite" *ngIf="!!questionText" class="question-container">
-  {{questionText}}
+<p aria-live="polite" [innerHTML]="questionText | replaceDash: dashReplaceString " *ngIf="!!questionText" class="question-container">
+  
 </p>

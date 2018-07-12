@@ -47,7 +47,7 @@ ul{
     color: #9e0606;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 926px){
     .option-container{
         display: block;
         width: 100%;

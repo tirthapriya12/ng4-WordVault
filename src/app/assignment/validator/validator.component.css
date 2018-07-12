@@ -23,7 +23,7 @@
     cursor: auto;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 926px){
     .validator-container{
 
         position: absolute;

@@ -14,7 +14,7 @@ export class QuestionComponent implements OnInit {
   @Input() roundData: any;
 
   questionText: string = '';
-
+  dashReplaceString = `<span aria-label='student reponse line' class='underline'>&nbsp;</span>`;
   constructor(private questionService: QuestionService, private eventManager: EventManager, private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {

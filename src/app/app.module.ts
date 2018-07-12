@@ -17,6 +17,7 @@ import { SpriteAnimationComponent } from './components/sprite-animation/sprite-a
 import { SpriteAnimationDataService } from './services/sprite-animation-data.service';
 import { SoundService } from './services/sound.service';
 import { HelpComponent } from './components/help/help.component';
+import { ReplaceDashPipe } from './replace-dash.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HelpComponent } from './components/help/help.component';
     OptionsComponent,
     ValidatorComponent,
     SpriteAnimationComponent,
-    HelpComponent
+    HelpComponent,
+    ReplaceDashPipe
   ],
   imports: [
     BrowserModule,

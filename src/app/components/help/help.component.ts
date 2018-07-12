@@ -14,9 +14,15 @@ export class HelpComponent implements OnInit {
   @Input() helpData: any;
   @Output() closeHelp = new EventEmitter<boolean>();
   @ViewChild('close') close;
+  @ViewChild('modal') modal;
   constructor() { }
 
   ngOnInit() {
+    this.modal.nativeElement.setAttribute('tabindex','-1');
+    setTimeout(()=>{
+      this.modal.nativeElement.focus();
+      this.modal.nativeElement.removeAttribute('tabindex');
+    })
   }
 
   ngOnChanges(changes: SimpleChanges) {

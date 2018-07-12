@@ -1,19 +1,19 @@
-<section class="dev-size">
+<section aria-live="polite" class="dev-size">
     <div class="directions">
         <button aria-label="direction audio" (click)="playDirectionAudio()" class="direction-audio" *ngIf="!!directionAudioUrl">
             <strong class="fa fa-volume-up"></strong>
         </button>
         <h3 class="direction-text">{{direction}}</h3>
     </div>
-    <app-question *ngIf="assignmentService.getRoundData(pageIndex)" [roundData]="currentRoundData"></app-question>
+    <app-question *ngIf="getRoundsData()" [roundData]="currentRoundData"></app-question>
 
     <section class="container">
 
         <section class="animation">
             <app-sprite-animation></app-sprite-animation>
         </section>
-        <app-options *ngIf="assignmentService.getRoundData(pageIndex)" [roundData]="currentRoundData"></app-options>
-        <app-validator *ngIf="assignmentService.getRoundData(pageIndex)" [roundData]="currentRoundData"></app-validator>
+        <app-options *ngIf="getRoundsData()" [roundData]="currentRoundData"></app-options>
+        <app-validator *ngIf="getRoundsData()" [roundData]="currentRoundData"></app-validator>
     </section>
 
 </section>

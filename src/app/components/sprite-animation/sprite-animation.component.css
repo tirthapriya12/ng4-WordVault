@@ -10,9 +10,11 @@
 .reward{
     
     position: absolute;
-    top: 80px;
-    height: 248px;
-    left: 163px;
+    top: 28px;
+    height: 355px;
+    left: 112px;
+    border-radius: 50%;
+
 }
 
 

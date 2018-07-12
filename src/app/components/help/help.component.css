@@ -26,6 +26,12 @@
     right: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
+    left: 286px;
+    width: 64%;
+}
+
+.help-video video{
+    width: 100%;
 }
 
 ::ng-deep span b{
@@ -37,8 +43,8 @@
     top: -23px;
     border-radius: 50%;
     border: none;
-    height: 20px;
-    width: 26px;
+    height: 32px;
+    width: 37px;
     background: #58aee2;
     color: white;
     cursor: pointer;
@@ -46,4 +52,39 @@
 
 .close-btn:focus{
     outline-color: black;    
+}
+
+
+@media screen and (max-width: 768px){
+    .modal-container{
+        width: 90%;
+    }
+
+    .help-video{
+        width: 59%;
+    }
+
+    .help-video video{
+        width: 100%;
+        left: 275px;
+    }
+    
+}
+
+@media screen and (max-width: 425px){
+    
+    .help-video{
+        display: block;
+        left: 10px;
+        margin-top: 15px;
+        width: 94%;
+    }
+    .help-text{
+        width: 350px;
+        float: none;
+    }
+    
+      .modal-container{
+          height:75%;
+      }
 }
