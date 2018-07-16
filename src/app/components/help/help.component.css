@@ -54,8 +54,18 @@
     outline-color: black;    
 }
 
+@media screen and (max-width: 1500px){
 
-@media screen and (max-width: 768px){
+    .help-video{
+        width: 60%;
+    }
+    .modal-container{
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 1024px){
     .modal-container{
         width: 90%;
     }
@@ -71,20 +81,22 @@
     
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 750px){
     
     .help-video{
         display: block;
         left: 10px;
-        margin-top: 15px;
+        /* margin-top: 15px; */
         width: 94%;
     }
     .help-text{
-        width: 350px;
+        width: 94%;
         float: none;
     }
     
       .modal-container{
-          height:75%;
+          height:87%;
       }
+     
+      
 }

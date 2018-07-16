@@ -1,5 +1,5 @@
-<app-header (helpopened)="onHelpOpened($event)" aria-live="assertive" [templateData]="templateData" [helpData]="helpData"></app-header>
-<main aria-live="polite" [attr.aria-hidden]="aria_hidden">
+<app-header  (helpopened)="onHelpOpened($event)" aria-live="assertive" [templateData]="templateData" [helpData]="helpData"></app-header>
+<main aria-live="polite" [ngClass]="{'help-opened': help_opnened}" [attr.aria-hidden]="aria_hidden">
     <app-assignment (pageChanged)="onPageChanged($event)" [totalPages]="totalPages" [templateData]="templateData"></app-assignment>
 </main>
 <app-footer [attr.aria-hidden]="aria_hidden" [currentPageNum]="currentPage"  [totalPages]="totalPages"></app-footer>

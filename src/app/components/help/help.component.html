@@ -1,12 +1,12 @@
 <section #modal class="modal-container" (keydown.esc)="emitClose()">
   <button #close (click)="emitClose()" aria-label="close" class="close-btn">X</button>
-  <section (keydown.tab)="handleFocus()" tabindex="0" class="help-text">
+  <section  tabindex="0" class="help-text">
     <span [innerHTML]="helpText">
     </span>
 
   </section>
   <section class="help-video">
-    <video [src]=helpVideoSrc preload="auto" autoplay></video>
+    <video (blur)="handleFocus()" controls [src]=helpVideoSrc preload="auto"></video>
   </section>
 
 </section>

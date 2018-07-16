@@ -42,7 +42,7 @@
     }
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 780px){
     
     .dev-size{
         height: 1020px;
