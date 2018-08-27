@@ -2,12 +2,15 @@
     width: 60%;
     position: relative;
     border: 3px solid blue;
-    height: 472px;
+    height: 510px;
     background: white;
     top: 40px;
     margin: 0 auto;
 }
-
+.head{
+    height: 30px;
+    background-color: #2828c3;
+}
 .help-text{
     display: inline-block;
     float: left;
@@ -45,7 +48,7 @@
     border: none;
     height: 32px;
     width: 37px;
-    background: #58aee2;
+    background: #E91E63;
     color: white;
     cursor: pointer;
 }

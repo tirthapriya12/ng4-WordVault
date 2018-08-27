@@ -21,8 +21,8 @@ export class HelpComponent implements OnInit {
     this.modal.nativeElement.setAttribute('tabindex','-1');
     setTimeout(()=>{
       this.modal.nativeElement.focus();
-      this.modal.nativeElement.removeAttribute('tabindex');
-    })
+      // this.modal.nativeElement.removeAttribute('tabindex');
+    },200);
   }
 
   ngOnChanges(changes: SimpleChanges) {

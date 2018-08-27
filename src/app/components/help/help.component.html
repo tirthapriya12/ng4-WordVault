@@ -1,4 +1,5 @@
-<section #modal class="modal-container" (keydown.esc)="emitClose()">
+<section role="application" #modal class="modal-container" (keydown.esc)="emitClose()">
+  <section class="head"></section>
   <button #close (click)="emitClose()" aria-label="close" class="close-btn">X</button>
   <section  tabindex="0" class="help-text">
     <span [innerHTML]="helpText">

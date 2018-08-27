@@ -39,6 +39,8 @@ export class HeaderComponent implements OnInit {
     this.helpopened.emit(this.helpOpened);
   }
 
-
+  close(){
+    window.close();
+  }
 
 }
